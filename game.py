@@ -24,6 +24,11 @@ class Checkers:
 
         # Interpret the user's input.
         question = input("What to do next? ").split(' ')
+        try:
+            int(question)
+        except:
+            print("Sorry, but that isn't a valid input!")
+            return
         answer = self.environment.move(int(question[0]),int(question[1]),int(question[2]),int(question[3]), self.player_turn)
 
         if debug == True:
